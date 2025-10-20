@@ -10,3 +10,5 @@ FROM dept_manager
 SELECT *
 FROM departments;
 
+
+
