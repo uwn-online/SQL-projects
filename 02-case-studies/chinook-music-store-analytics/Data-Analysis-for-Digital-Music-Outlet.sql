@@ -57,4 +57,14 @@ GROUP BY e.EmployeeId
 ORDER BY total_revenue DESC
 LIMIT 1;
 
+/* Question 6: What is the best performing Genre based on Revenue*/
+
+SELECT g.GenreId, g.Name, ROUND(SUM(il.UnitPrice * il.Quantity),2) AS total_sales
+FROM Genre AS g 
+JOIN Track AS t ON t.GenreId = g.GenreId
+JOIN InvoiceLine AS il ON il.TrackId = t.TrackId
+GROUP BY g.GenreId, g.Name
+ORDER BY total_sales DESC
+;
+
 
